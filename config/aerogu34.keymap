@@ -32,12 +32,23 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
+// ===== ホールドタップ誤爆対策(jisaku_1と同設定) =====
+// balanced: 別キーが押して離されるまで完了したら長押し判定
+// require-prior-idle-ms: 直前の打鍵から125ms以内は問答無用で単押し判定(ローリング誤爆根絶)
+// quick-tap-ms: タップ直後150ms以内の再押下は単押し(キーリピート有効化)
 &mt {
-    tapping-term-ms = <300>;
     flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <125>;
 };
 
-&lt { quick-tap-ms = <300>; };
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <125>;
+};
 
 / {
     combos {
