@@ -36,8 +36,10 @@ manifest:
       remote: cormoran
     - name: zmk-feature-watchdog
       remote: cormoran
+      import: true
     - name: zmk-feature-kscan-diagnostics
       remote: cormoran
+      import: true
     - name: zmk-module-runtime-input-processor
       remote: cormoran
     # Deadzone input processor
