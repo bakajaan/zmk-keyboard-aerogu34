@@ -12,45 +12,62 @@ manifest:
       url-base: https://github.com/t-ogura
     - name: bakajaan
       url-base: https://github.com/bakajaan
+  # =====================================================================
+  # 【SHAピン留め 2026-07-26】外部依存は動作確認済みのコミットに固定。
+  # 上流ブランチの更新でビルドや挙動が勝手に変わるのを防ぐ。
+  # 更新したいときは revision を新しいSHA（または一時的にブランチ名）に差し替える。
+  # zmk-keymap-common は自分のリポジトリ（キーマップ編集を即反映させたい）のため main 追従のまま。
+  # =====================================================================
   projects:
     # ZMK: cormoran fork, main+dya = ZMK main (Zephyr 4.1) base with DYA Studio RPC
+    # (main+dya の 2026-07-25 時点 HEAD)
     - name: zmk
       remote: cormoran
-      revision: main+dya
+      revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8
       import: app/west.yml
     # Trackball driver
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
+      revision: df652881be2520bde4f64ab6ca35e4c5708f4f9b
     # RGB LED widget (main supports Zephyr 4.1 / xiao_ble naming)
     - name: zmk-rgbled-widget
       remote: caksoylar
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b
     # DYA Studio modules (main = v4-compatible)
     - name: zmk-module-ble-management
       remote: cormoran
+      revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
     - name: zmk-module-battery-history
       remote: cormoran
+      revision: 307755dd2ad4d320e14de162e8e5ef018f29d929
     - name: zmk-module-settings-rpc
       remote: cormoran
+      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
     # DYA Studio トラブルシューティング機能
     - name: zmk-feature-device-info
       remote: cormoran
+      revision: 8cedd2dd9f04e19ea5a17b94914dd47a09d8db11
     - name: zmk-feature-watchdog
       remote: cormoran
+      revision: 84ad14c6c3645dc40b23f45d08ab45418655f912
       import: true
     - name: zmk-feature-kscan-diagnostics
       remote: cormoran
+      revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e
       import: true
     - name: zmk-module-runtime-input-processor
       remote: cormoran
+      revision: 43618985f8c9d5457cc333b7ca0733f2d361911e
     # Deadzone input processor
     - name: zmk-input-processor-deadzone
       remote: prospector
+      revision: 7ae1bcb0d367ad00b7fa8836cf9a9b197d88e555
     # Prospector
     - name: prospector-zmk-module
       remote: prospector
-      revision: main
+      revision: 400a1743f56332a2e8344f74a572f62236cdfa29
       path: modules/prospector-zmk-module
-    # 共通キーマップ定義(jisaku_1 / aerogu34で共有)
+    # 共通キーマップ定義(jisaku_1 / aerogu34で共有・main追従)
     - name: zmk-keymap-common
       remote: bakajaan
   self:
