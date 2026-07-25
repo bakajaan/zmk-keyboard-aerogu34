@@ -31,6 +31,13 @@ manifest:
       remote: cormoran
     - name: zmk-module-settings-rpc
       remote: cormoran
+    # DYA Studio トラブルシューティング機能
+    - name: zmk-feature-device-info
+      remote: cormoran
+    - name: zmk-feature-watchdog
+      remote: cormoran
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
     - name: zmk-module-runtime-input-processor
       remote: cormoran
     # Deadzone input processor
