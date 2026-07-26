@@ -58,6 +58,22 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: 43618985f8c9d5457cc333b7ca0733f2d361911e
+    # カスタム設定 (設定タブの詳細設定 + os-detectionの依存 2026-07-26追加・jisaku_1と同SHA)
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
+    # 入力ストリーム (DYA Studioの打鍵ヒートマップ/Streamトグル用 2026-07-26追加)
+    - name: zmk-feature-input-stream
+      remote: cormoran
+      revision: aeb015908a42a7615ccdccc7feb3a10d23132a71
+    # OS検出 + 接続先ごとのデフォルトレイヤー切替 (DYA Studio接続タブ用 2026-07-26追加)
+    # os-detection は custom-settings に依存するが、上でSHA固定済みのため import は使わない
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: 3052679f645b8fc1997275c2eaa6b86bdd55ca01
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: 92728246f80d327709839b2dbf5cf11880ff87e1
     # Deadzone input processor
     - name: zmk-input-processor-deadzone
       remote: prospector
