@@ -55,6 +55,12 @@ manifest:
       remote: cormoran
       revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e
       import: true
+    # BLEコントローラのアサート記録 (2026-07-27追加・jisaku_1と同SHA)
+    # LL_ASSERT失敗を素のk_oops（PC/LRだけでシンボル解決不能）ではなく、
+    # 発生元のソースファイル名と行番号としてウォッチドッグ記録に残す。
+    - name: zmk-feature-ctlr-assert
+      remote: bakajaan
+      revision: 59d09925dc64bc3aaf30accfbbdf42ea922c0948
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: 43618985f8c9d5457cc333b7ca0733f2d361911e
