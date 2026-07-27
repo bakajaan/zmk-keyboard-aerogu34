@@ -84,9 +84,17 @@ manifest:
     - name: zmk-feature-os-detection
       remote: cormoran
       revision: 3052679f645b8fc1997275c2eaa6b86bdd55ca01
-    - name: zmk-feature-default-layer
-      remote: cormoran
-      revision: 92728246f80d327709839b2dbf5cf11880ff87e1
+    # デフォルトレイヤー (2026-07-27 差し替え・jisaku_1と同SHA)
+    # 旧: cormoran/zmk-feature-default-layer は「接続先ごと」だけの対応で、
+    # OS別マッピングもStudio RPCも持たないため、DYA Studioの接続タブにある
+    # 「OSごとのデフォルトレイヤー」が機能しなかった。
+    # 新: bakajaan/zmk-feature-default-layer-os は同じKconfig名・同じ&df・
+    # 同じsettingsキー(旧レコードは自動移行)のまま、OS別マッピングと
+    # cormoran__default_layer サブシステムを追加したドロップイン置換。
+    # 旧モジュールとは同居できない(compatible/Kconfigが衝突する)。
+    - name: zmk-feature-default-layer-os
+      remote: bakajaan
+      revision: 0f4cfd6d3ee072968659fc2208de6a5c969be282
     # Deadzone input processor
     - name: zmk-input-processor-deadzone
       remote: prospector
