@@ -95,6 +95,18 @@ manifest:
     - name: zmk-feature-default-layer-os
       remote: bakajaan
       revision: 0f4cfd6d3ee072968659fc2208de6a5c969be282
+    # スレッドスタック使用量モニター + ログキャプチャ (DYA Studio Troubleshootingタブ用 2026-07-27追加・jisaku_1と同SHA)
+    # cormoran__devtool サブシステム: スタックの高水位線・ログをリアルタイムで確認できる。
+    # スタックオーバーフロー起因のウォッチドッグクラッシュの原因調査に有用。
+    - name: zmk-module-devtool
+      remote: cormoran
+      revision: 9938a2c73c06d6e65ba2c0b68c9aa044a467eafc
+    # 高速キーマップ読込 (DYA Studio 2026-07-27追加・jisaku_1と同SHA)
+    # cormoran__fast_keymap サブシステム: フィンガープリントキャッシュにより
+    # 2回目以降のキーマップ読込をほぼ即座に完了させる。
+    - name: zmk-feature-fast-keymap
+      remote: cormoran
+      revision: 8dac76de0ba38588ba39ca498910e24f8332bc6b
     # Deadzone input processor
     - name: zmk-input-processor-deadzone
       remote: prospector
