@@ -92,9 +92,11 @@ manifest:
     # 同じsettingsキー(旧レコードは自動移行)のまま、OS別マッピングと
     # cormoran__default_layer サブシステムを追加したドロップイン置換。
     # 旧モジュールとは同居できない(compatible/Kconfigが衝突する)。
+    # 【2026-07-27 修正】0f4cfd6d には CONFIG_ZMK_BLE_PROFILE_COUNT (存在しないKconfig)
+    # を使うビルドエラーがあったため、43cba0469 (修正済みコミット) にSHAを更新。
     - name: zmk-feature-default-layer-os
       remote: bakajaan
-      revision: 0f4cfd6d3ee072968659fc2208de6a5c969be282
+      revision: 43cba0469c512d3d98f4bebca4a7edbbf7e7cc95
     # スレッドスタック使用量モニター + ログキャプチャ (DYA Studio Troubleshootingタブ用 2026-07-27追加・jisaku_1と同SHA)
     # cormoran__devtool サブシステム: スタックの高水位線・ログをリアルタイムで確認できる。
     # スタックオーバーフロー起因のウォッチドッグクラッシュの原因調査に有用。
