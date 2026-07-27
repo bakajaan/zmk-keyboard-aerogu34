@@ -66,6 +66,11 @@ manifest:
     - name: zmk-feature-input-stream
       remote: cormoran
       revision: aeb015908a42a7615ccdccc7feb3a10d23132a71
+    # 打鍵統計 (キーボード側に保存するヒートマップ + キーコード別集計 2026-07-27追加)
+    # Studioを開いていない間の打鍵も記録され、再起動しても保持される。
+    - name: zmk-feature-key-usage
+      remote: bakajaan
+      revision: 02c9fea60535524796f5fe0f1ebdfeed5fbf8b96
     # OS検出 + 接続先ごとのデフォルトレイヤー切替 (DYA Studio接続タブ用 2026-07-26追加)
     # os-detection は custom-settings に依存するが、上でSHA固定済みのため import は使わない
     - name: zmk-feature-os-detection
